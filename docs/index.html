@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://raw.githubusercontent.com/AlonsoAliaga/banner-generator/main/assets/imges/logo.png" type="image/png">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/AlonsoAliaga/banner-generator/main/assets/imges/logo.png" type="image/png">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Banner Generator | AlonsoAliaga Development</title>
+
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <meta name="theme-color" content="#9a14ff"/>
+    <meta property="og:title" content="Banner Generator | AlonsoAliaga Development">
+    <meta property="og:key" content="Banner Generator | AlonsoAliaga Development">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AlonsoAliaga/banner-generator/main/assets/imges/logo.png">
+    <meta property="og:description" content="Create amazing banners easily and share them with everyone!&#10;&#13;Many options and features available!">
+    <meta property="description" content="Create amazing banners easily and share them with everyone!&#10;&#13;Many options and features available!">
+    <meta name="og:keywords" content="mcpfp, alonsoaliaga, banner, generator, hex, minecraft, bungeecord, paper, spigot, plugins, html, css, javascript, java, hex, rgb, generator, alonsoaliaga.github.io, alonsoaliaga.com, Minecraft hex generator,Minecraft hex color tool,gradient generator for Minecraft,Minecraft text gradient tool,Minecraft color presets,MiniMessage hex generator,Minecraft gradient maker,Minecraft chat colors,Minecraft hex syntax,Minecraft color codes,PlaceholderAPI hex,Minecraft hex presets,Minecraft gradient builder,Minecraft gradient preview,Minecraft RGB text,hex decode tool for Minecraft,decode hex gradient,color string decoder,convert hex to gradient,chat gradient editor,Minecraft scoreboard color,Minecraft tablist color,custom gradient chat,Minecraft RGB codes,Minecraft formatting tool,Minecraft color string parser,save gradient for Minecraft,load Minecraft hex gradient,Minecraft font color manager,Minecraft plugin dev tool,Minecraft text colorizer,custom rank color,Minecraft prefix gradient,color formatting for plugins,Minecraft hex tag tool,chat message colorizer,Minecraft plugin utility,MiniMessage color preview,Minecraft rank color generator,Minecraft name color generator,LuckPerms hex colors,chat hex formatting,PlaceholderAPI gradient plugin,ItemsAdder hex colors,Oraxen chat gradient,Minecraft UI gradient,Minecraft hex font preview,font color formatting,text color generator Minecraft,color string saver Minecraft,color gradient visualizer,Minecraft gradient editor,creador de degradados Minecraft,generador de colores hex Minecraft,formato hex para Minecraft,gradiente de colores en Minecraft,personalizar texto Minecraft,colores en scoreboard,colores en tablist,editar color de texto Minecraft,plugin de colores para Minecraft,códigos de color Minecraft,personalizar rangos con color,generador de texto RGB,guardar degradado Minecraft,importar colores hex,Minecraft español,crear degradado visual,Minecraft herramienta de color,herramienta para desarrolladores de plugins,formato MiniMessage en español,degradados en plugins,color personalizado para jugadores">
+    <meta name="keywords" content="mcpfp, alonsoaliaga, banner, generator, hex, minecraft, bungeecord, spigot, paper, plugins, html, css, javascript, java, hex, rgb, generator, alonsoaliaga.github.io, alonsoaliaga.com, Minecraft hex generator,Minecraft hex color tool,gradient generator for Minecraft,Minecraft text gradient tool,Minecraft color presets,MiniMessage hex generator,Minecraft gradient maker,Minecraft chat colors,Minecraft hex syntax,Minecraft color codes,PlaceholderAPI hex,Minecraft hex presets,Minecraft gradient builder,Minecraft gradient preview,Minecraft RGB text,hex decode tool for Minecraft,decode hex gradient,color string decoder,convert hex to gradient,chat gradient editor,Minecraft scoreboard color,Minecraft tablist color,custom gradient chat,Minecraft RGB codes,Minecraft formatting tool,Minecraft color string parser,save gradient for Minecraft,load Minecraft hex gradient,Minecraft font color manager,Minecraft plugin dev tool,Minecraft text colorizer,custom rank color,Minecraft prefix gradient,color formatting for plugins,Minecraft hex tag tool,chat message colorizer,Minecraft plugin utility,MiniMessage color preview,Minecraft rank color generator,Minecraft name color generator,LuckPerms hex colors,chat hex formatting,PlaceholderAPI gradient plugin,ItemsAdder hex colors,Oraxen chat gradient,Minecraft UI gradient,Minecraft hex font preview,font color formatting,text color generator Minecraft,color string saver Minecraft,color gradient visualizer,Minecraft gradient editor,creador de degradados Minecraft,generador de colores hex Minecraft,formato hex para Minecraft,gradiente de colores en Minecraft,personalizar texto Minecraft,colores en scoreboard,colores en tablist,editar color de texto Minecraft,plugin de colores para Minecraft,códigos de color Minecraft,personalizar rangos con color,generador de texto RGB,guardar degradado Minecraft,importar colores hex,Minecraft español,crear degradado visual,Minecraft herramienta de color,herramienta para desarrolladores de plugins,formato MiniMessage en español,degradados en plugins,color personalizado para jugadores">
+    <meta property="og:url" content="https://alonsoaliaga.github.io/index.html">
+    <meta property="og:site_name" content="Banner Generator - AlonsoAliaga Development" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        @font-face { font-family: MinecraftRegular; src: url(https://raw.githubusercontent.com/AlonsoAliaga/rank-textures/main/assets/fonts/MinecraftRegular.otf); }
+        @font-face { font-family: MinecraftBold; src: url(https://raw.githubusercontent.com/AlonsoAliaga/rank-textures/main/assets/fonts/MinecraftBold.otf); }
+        @font-face { font-family: MinecraftBoldItalic; src: url(https://raw.githubusercontent.com/AlonsoAliaga/rank-textures/main/assets/fonts/MinecraftBoldItalic.otf); }
+        @font-face { font-family: MinecraftItalic; src: url(https://raw.githubusercontent.com/AlonsoAliaga/rank-textures/main/assets/fonts/MinecraftItalic.otf); }
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #aaa;
+            --layer-bg: #e5e5e5;
+            --btn-bg: #f8fdc9; 
+            --btn-border: #333333;
+            --btn-text: #272727;
+            --btn-add-bg: #ccffcc;
+            --btn-add-text: #000000;
+            --btn-remove-bg: #ffcccc;
+            --btn-remove-text: #000000;
+            --input-bg: #ffffff;
+            --input-border: #cccccc;
+            --input-text: #000000;
+            --link-color: #5555FF;
+            --canvas-gradient-start: #f5f5f5;
+            --canvas-gradient-end: #dcdcdc;
+            --container-bg: #f9f9f9;
+            --showcase-border: silver;
+        }
+        body.dark-mode {
+            --bg-color: #363636;    
+            --text-color: #d0d0d0;
+            --border-color: #555;
+            --layer-bg: #303030;
+            --btn-bg: #ffd5f2; 
+            --btn-border: #25172f;
+            --btn-text: #272727; 
+            --btn-add-bg: #2b5c2b;
+            --btn-add-text: #ffffff;
+            --btn-remove-bg: #5c2b2b;
+            --btn-remove-text: #ffffff;
+            --input-bg: #e4d2de;
+            --input-border: #43245c;
+            --input-text: #272727;
+            --link-color: #5555FF;
+            --canvas-gradient-start: #2a2a2a;
+            --canvas-gradient-end: #1a1a1a;
+            --container-bg: #111;
+            --showcase-border: #555; 
+        }
+        body { background-color: var(--bg-color); color: var(--text-color); min-height: 100vh; display: flex; flex-direction: column; align-items: center; font-family: 'MinecraftRegular', sans-serif; overflow-x: hidden; margin: auto; text-align: center; transition: background-color 0.3s, color 0.3s; }
+        .rainbow { background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff); -webkit-background-clip: text; background-clip: text; color: transparent; animation: rainbow_animation 2s ease-in-out infinite; background-size: 400% 100%; font-family: 'MinecraftBold', sans-serif; }
+        #tools-for-you a.rainbow { color: transparent !important; }
+        @keyframes rainbow_animation { 0%,100% { background-position: 0 0; } 50% { background-position: 100% 0; } }
+        #online-counter { width: 100%; background-color: #00aa00; color: white; text-align: center; padding: 4px; font-size: 16px; text-shadow: 1px 1px 0 #000; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; gap: 5px; min-height: 32px; }
+        .warning-text { color: #FF5555; font-size: 15px; text-shadow: 1px 1px 0 #000; margin-bottom: 10px; font-family: 'MinecraftBold'; margin-top: 5px; width: 100%; max-width: 100%; text-align: center; }
+        .description-box { border: 2px solid var(--border-color); border-radius: 30px; padding: 5px 25px; background-color: transparent; width: 100%; max-width: 100%; box-sizing: border-box; text-align: center; margin-bottom: 20px; font-size: 16px; position: relative; }
+        .main-title { font-size: 40px; margin-bottom: 2px; text-decoration: none; color: #5555FF; text-shadow: 2px 2px 0 #000; font-family: 'MinecraftBold'; }
+        .main-title span { color: #ffffff; }
+        .btn-custom { font-family: 'MinecraftRegular'; border-radius: 25px; border-color: var(--btn-border); background-color: var(--btn-bg); color: var(--btn-text); border-style: solid; border-width: 2px; padding: 4px 12px; cursor: pointer; font-size: 14px; transition: transform 0.1s, filter 0.2s; box-shadow: 2px 2px 0px rgba(0,0,0,0.2); display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 28px; }
+        .btn-custom:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: none; }
+        .btn-custom:disabled { filter: grayscale(100%); cursor: not-allowed; opacity: 0.5; box-shadow: none; }
+        .btn-custom input[type="checkbox"] { accent-color: #ff3399; width: 14px; height: 14px; cursor: pointer; }
+        
+        .btn-add-layer { background-color: var(--btn-add-bg) !important; color: var(--btn-add-text) !important; border-color: #555 !important; }
+        .btn-remove-layer { background-color: var(--btn-remove-bg) !important; color: var(--btn-remove-text) !important; border-color: #555 !important; }
+
+        .btn-premium { font-family: 'MinecraftRegular'; border-radius: 6px; border: 2px solid #555; background-color: #3b3b3b; color: #fff; padding: 6px 14px; cursor: pointer; font-size: 14px; transition: transform 0.1s, background-color 0.2s; box-shadow: 2px 2px 0px rgba(0,0,0,0.3); }
+        .btn-premium:hover { background-color: #4a4a4a; }
+        .btn-premium:active { transform: translate(2px, 2px); box-shadow: none; }
+        .btn-premium.share-btn { background-color: #2563eb; border-color: #1e3a8a; }
+        .btn-premium.share-btn:hover { background-color: #1d4ed8; }
+        .btn-premium.export-file-btn { background-color: #2e7d32; border-color: #1b5e20; }
+        .btn-premium.export-file-btn:hover { background-color: #1b5e20; }
+        .btn-premium.import-file-btn { background-color: #d84315; border-color: #bf360c; }
+        .btn-premium.import-file-btn:hover { background-color: #bf360c; }
+
+        .main-layout { display: flex; width: 100%; max-width: 1400px; justify-content: center; gap: 20px; padding: 0 10px; box-sizing: border-box; margin-top: 10px; }
+        .ad-space { width: 160px; flex-shrink: 0; display: flex; flex-direction: column; gap: 20px; }
+        .app-container { width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 10px; }
+        .lang-flags { display: flex; align-items: center; gap: 6px; margin-left: 5px; }
+        .lang-flag { width: 28px !important; height: auto; cursor: pointer; transition: transform 0.2s; border-radius: 2px; box-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+        .lang-flag:hover { transform: scale(1.15); }
+        .lang-flag.active { border: 2px solid white; transform: scale(1.15); }
+        .canvas-box { width: 100%; border: 2px solid var(--border-color); border-radius: 20px; background: radial-gradient(circle at center, var(--canvas-gradient-start) 0%, var(--canvas-gradient-end) 100%); height: auto; min-height: 250px; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 20px; margin-top: 10px; }
+        
+        fieldset { border: 2px solid var(--border-color); border-radius: 20px; padding: 10px 15px; margin-top: 2px; background: transparent; position: relative; width: 100%; }
+        legend { text-align: center; padding: 0 5px; font-size: 14px; color: var(--text-color); font-family: 'MinecraftBold'; }
+        
+        fieldset.premium-section { border: 2px solid #D4AF37; background: linear-gradient(135deg, #1a1a1a, #332b00); border-radius: 15px; padding: 7.5px 15px 15px 15px; margin-top: 0px; margin-bottom: 5px; color: #fff; width: 100%; box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+        .premium-section legend { font-family: 'MinecraftBold'; font-size: 20px; margin: 0 auto; text-shadow: none; }
+        
+        .switch { position: relative; display: inline-block; width: 36px; height: 18px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 20px; }
+        .slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: #55FF55; }
+        input:checked + .slider:before { transform: translateX(18px); }
+
+        .error-popup { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background-color: #500000; border: 2px solid #ff5555; color: white; padding: 10px 20px; font-family: 'MinecraftRegular'; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 4px 0 rgba(0,0,0,0.5); z-index: 9999; transition: bottom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28); border-radius: 4px; pointer-events: none; }
+        .error-popup.show { bottom: 40px; }
+        .showcase-container { display: flex; justify-content: center; gap: 15px; margin-top: 5px; flex-wrap: nowrap; width: 100%; max-width: 100%; }
+        .showcase-box { border: 2px solid var(--showcase-border); padding: 0; width: 32%; border-radius: 0; display: flex; justify-content: center; background: transparent; flex-direction: column; align-items: center; }
+        .showcase-legend { text-align: center; width: 95%; padding: 0 5px 5px 5px; font-family: 'MinecraftBold'; font-size: 14px; color: var(--text-color); margin: auto; line-height: 1.2; background-color: var(--bg-color); }
+        .showcase-img { height: 200px; width: auto; max-width: 100%; cursor: pointer; border-radius: 0 0 8px 8px; transition: transform 0.2s; margin-bottom: 0px; object-fit: contain; }
+        .showcase-img:hover { transform: scale(1.02); }
+        .options { width: 100%; display: flex; justify-content: center; margin-top: 20px; }
+        .examples { width: 100%; border: 2px solid var(--border-color); border-radius: 30px; padding: 20px; margin-top: 10px; text-align: center; }
+        #tools-for-you a { color: var(--link-color); text-decoration: none; }
+        #tools-for-you a:hover { color: #FFFF55; text-decoration: none; }
+        #mybutton { position: fixed; bottom: 10px; right: 10px; padding: 0; border: none; background: none; font-family: MinecraftRegular; z-index: 9999; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; }
+        #mybutton:hover { bottom: 15px; right: 15px; }
+        .floating-icon { width: 96px; height: auto; image-rendering: pixelated; filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.5)); cursor: pointer; }
+        #visitor-counter { margin-top: -5px; background: rgba(0,0,0,0.7); padding: 2px 8px; border-radius: 10px; }
+        #counter-amount { color: white; font-size: 12px; text-shadow: 1px 1px 0 #000; }
+        .ad-locked-overlay { position: absolute; inset: 0; background: rgba(236, 28, 28, 0.85); display: flex; flex-direction: row; flex-wrap: wrap; border-radius: 12px; align-items: center; justify-content: center; cursor: not-allowed; z-index: 50; color: #ffffff; font-family: 'MinecraftBold'; text-shadow: 1px 1px 0 #000; padding: 5px; text-align: center; gap: 5px; }
+        .ad-locked-overlay span.emoji { font-size: 16px; display: inline-block; }
+        .ad-locked-overlay span.text { line-height: 1.2; }
+        
+        #bannerCanvas { image-rendering: pixelated; image-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; width: auto; height: 100%; max-height: 280px; }
+        
+        .color-btn, .pattern-btn { cursor: pointer; transition: transform 0.1s; border-radius: 6px; border: 2px solid transparent; flex-shrink: 0; image-rendering: pixelated; }
+        .pattern-btn { width: 32px; height: 60px; background-size: contain; background-repeat: no-repeat; background-position: center; border-color: #555; }
+        .color-btn { width: 40px; height: 40px; background-size: 70%; background-repeat: no-repeat; background-position: center; border-color: #555; background-color: var(--container-bg); }
+        .color-btn:hover, .pattern-btn:hover { transform: scale(1.1); }
+        .color-btn.active, .pattern-btn.active { border-color: #ff3399; transform: scale(1.1); background-color: rgba(255, 51, 153, 0.3); }
+        .grid-container { display: flex; flex-wrap: wrap; gap: 8px; overflow: visible; padding: 5px; justify-content: center; }
+        
+        .layer-item { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5px; border: 2px solid var(--border-color); border-radius: 12px; background: var(--layer-bg); cursor: grab; min-width: 80px; max-width: 100px; transition: border-color 0.2s, transform 0.2s; flex-shrink: 0; }
+        .layer-item.dragging { opacity: 0.5; transform: scale(0.95); }
+        .layer-item.drag-over-left { box-shadow: -4px 0 0 #ff5555; background: rgba(255, 85, 85, 0.1); }
+        .layer-item.drag-over-right { box-shadow: 4px 0 0 #ff5555; background: rgba(255, 85, 85, 0.1); }
+        .layer-item.drag-over-center { box-shadow: 0 0 0 4px #ff5555 inset; background: rgba(255, 85, 85, 0.2); }
+        .layer-item.active { border-color: #5555FF; box-shadow: 0 0 8px rgba(85,85,255,0.4); }
+        .layer-preview { width: 25px; height: 50px; image-rendering: pixelated; border: 1px solid #000; margin-bottom: 5px; background: rgba(0,0,0,0.1); }
+        .layer-info { text-align: center; font-size: 11px; line-height: 1.2; padding-left: 0; width: 100%; word-break: break-all; margin-top: 4px; }
+        
+        @media (max-width: 850px) {
+            .showcase-container { flex-wrap: wrap; }
+            .showcase-box { width: 100%; }
+            #mybutton { display: none; } 
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div id="online-counter" style="display:none;"></div>
+    <div class="main-layout">
+        <div class="ad-space"></div>
+        <div class="flex flex-col w-full max-w-[950px] items-center">
+            <div class="text-center w-full">
+                <a href="#" class="main-title block rainbow">Banner <span>Generator</span></a>
+            </div>
+            <div class="profile_input_label" data-max-width="750px" data-max-height="120px"></div>
+            <hr style="width: 100%; border-color: #888; margin-bottom: 5px;">
+            <div class="warning-text" data-i18n="warning.browser">Use Google Chrome or Opera for a better experience. Edge is reported as not compatible!</div>
+            <div class="description-box">
+                <p class="rainbow font-bold mb-2 text-xl" style="display:inline-block;" data-i18n="desc.title">Why using this tool?</p>
+                <p data-i18n="desc.text1" class="text-sm">Let's be honest, there are many tools to create banners out there, but only this one is incredibly simple to use and features intuitive tools like drag-and-drop layers, multiple languages, <span class='rainbow'>and everything in one place!</span></p>
+                <p class="text-red-400 mt-2 font-bold" style="color:#ff5555;" data-i18n="desc.tagline">Create your best banner and surprise everyone!</p>
+                <div class="text-sm mt-2" style="color:#5555ff;">
+                    <div data-i18n="desc.discord">⚠️ If you have cool ideas, suggest them in our <a href="https://alonsoaliaga.com/discord" style="text-decoration:underline;">official discord server</a>.</div>
+                    <div style="margin-top: 5px; text-align: center;" data-i18n="desc.donate"><img width="15px" src="https://i.imgur.com/Ef9FOQm.png" style="vertical-align: middle; display: inline-block; margin-bottom: 2px;"> If you found this tool useful, consider <a href="https://alonsoaliaga.com/donate" style="text-decoration:underline;">making a donation</a> for our hard work. We appreciate it!</div>
+                </div>
+            </div>
+            <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center; width: 100%; padding-bottom: 5px;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center;">
+                    <span class="font-bold mr-1" data-i18n="options.site_options" style="font-size:16px;">Site options:</span>
+                    <label class="btn-custom" style="margin:0;"><input type="checkbox" id="darkModeCheck" class="classic-cb" checked> <span data-i18n="options.dark_mode">Dark Mode 👁️‍🗨️</span></label>
+                    <button id="langAutoBtn" class="btn-custom" style="padding: 2px 8px; font-size:14px; background: #3b82f6; border-color: #1d4ed8; color: white; margin:0;" data-i18n="options.button_auto">🤖 AUTO</button>
+                    <div class="lang-flags" id="flagsContainer" style="margin-left:0;"></div>
+                </div>
+            </div>
+            
+            <div class="app-container">
+                <!-- Layers Section -->
+                <fieldset style="padding-bottom: 20px;">
+                    <legend data-i18n="sidebar.layers">&nbsp;Layers 🗂️&nbsp;</legend>
+                    <div class="flex flex-wrap justify-center gap-2 mb-2">
+                        <button id="btnClearLayer" class="btn-custom" style="background:#5555ff; border-color:#0000aa; color:white; border-radius: 12px;" data-i18n="btn.clear" disabled>🧹 Clear</button>
+                        <button id="btnDeleteLayer" class="btn-custom" style="background:#ff5555; border-color:#aa0000; color:white; border-radius: 12px;" data-i18n="btn.delete" disabled>🗑️ Delete</button>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 w-full mt-2" style="margin-bottom: 5px;">
+                        <button id="btnRemoveLayer" class="btn-custom btn-remove-layer flex-shrink-0" style="padding: 0 10px; font-size: 24px; font-weight: bold; border-radius: 12px; height: 40px; margin-left: 10px;" title="Remove Last Layer">-</button>
+                        <div id="layersList" style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; width: 100%;"></div>
+                        <button id="btnAddLayer" class="btn-custom btn-add-layer flex-shrink-0" style="padding: 0 10px; font-size: 24px; font-weight: bold; border-radius: 12px; height: 40px; margin-right: 10px;" title="Add Layer">+</button>
+                    </div>
+                </fieldset>
+
+                <!-- Patterns Section -->
+                <fieldset id="patternsFieldSet">
+                    <legend data-i18n="sidebar.patterns">&nbsp;Patterns 🖌️&nbsp;</legend>
+                    <div class="grid-container" id="patternsGrid"></div>
+                </fieldset>
+
+                <!-- Colors Section -->
+                <fieldset>
+                    <legend data-i18n="sidebar.colors">&nbsp;Colors 🎨&nbsp;</legend>
+                    <div class="grid-container" id="colorsGrid" style="gap: 4px; max-height: 180px;"></div>
+                </fieldset>
+
+                <!-- Canvas / Output Section -->
+                <div class="canvas-box" id="mainContainer">
+                    <canvas id="bannerCanvas" width="20" height="40"></canvas>
+                    <div id="toast" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 border border-white px-3 py-1 rounded text-xs opacity-0 transition-opacity pointer-events-none text-white font-bold">Done</div>
+                </div>
+
+                <!-- Premium Section -->
+                <fieldset id="feature-premium" class="premium-section">
+                    <legend><span class="rainbow" data-i18n="premium.title">&nbsp;Premium Settings&nbsp;</span> 👑</legend>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex flex-wrap justify-center gap-6">
+                            <div class="flex items-center gap-2">
+                                <label class="switch"><input type="checkbox" id="unlimitedLayersToggle"><span class="slider"></span></label>
+                                <span data-i18n="premium.unlimited" style="font-size: 14px;">Unlimited Layers</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <label class="switch"><input type="checkbox" id="shieldModeToggle"><span class="slider"></span></label>
+                                <span data-i18n="premium.shield" style="font-size: 14px;">Shield Mode</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <label class="switch"><input type="checkbox" id="coloredPreviewsToggle"><span class="slider"></span></label>
+                                <span data-i18n="premium.colored_preview" style="font-size: 14px;">Colored Previews</span>
+                            </div>
+                        </div>
+
+                        <!-- Code Generators Toggle -->
+                        <div class="flex flex-wrap justify-center gap-6 mt-0">
+                            <div class="flex items-center gap-2">
+                                <label class="switch"><input type="checkbox" id="showSpigotToggle"><span class="slider"></span></label>
+                                <span data-i18n="premium.show_spigot" style="font-size: 14px;">Show Spigot Code</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <label class="switch"><input type="checkbox" id="showGiveToggle"><span class="slider"></span></label>
+                                <span data-i18n="premium.show_give" style="font-size: 14px;">Show Give Command</span>
+                            </div>
+                        </div>
+
+                        <!-- Code Display Areas -->
+                        <div id="spigotCodeContainer" style="display:none;" class="mt-2 w-full">
+                            <div class="text-left text-xs text-gray-300 mb-1 font-bold" data-i18n="premium.label_spigot">Spigot API Java Code:</div>
+                            <textarea id="spigotCodeArea" class="w-full p-2 rounded bg-gray-900 text-green-400 border border-gray-600 text-xs font-mono" readonly></textarea>
+                            <div class="text-xs text-gray-400 mt-1 text-center" data-i18n="premium.code_warning">⚠️ There might be errors, report them in our <a href="https://alonsoaliaga.com/discord" style="text-decoration:underline; color:#5555ff;">Discord</a>.</div>
+                        </div>
+                        <div id="giveCodeContainer" style="display:none;" class="mt-2 w-full">
+                            <div class="text-left text-xs text-gray-300 mb-1 font-bold" data-i18n="premium.label_give">In-Game Give Command:</div>
+                            <textarea id="giveCodeArea" class="w-full p-2 rounded bg-gray-900 text-yellow-400 border border-gray-600 text-xs font-mono" readonly></textarea>
+                            <div class="text-xs text-gray-400 mt-1 text-center" data-i18n="premium.code_warning">⚠️ There might be errors, report them in our <a href="https://alonsoaliaga.com/discord" style="text-decoration:underline; color:#5555ff;">Discord</a>.</div>
+                        </div>
+                        
+                        <!-- Advanced I/O Section -->
+                        <div class="flex flex-col gap-2 mt-4 max-w-xl mx-auto w-full">
+                            <textarea id="dataTextarea" rows="2" class="w-full p-2 rounded bg-gray-100 text-black border border-gray-400 text-xs font-mono" data-i18n="[placeholder]premium.textarea_ph" placeholder="Paste JSON string or Minecraft command here..."></textarea>
+                            <div class="flex flex-wrap justify-center gap-2">
+                                <button id="importTextBtn" class="btn-premium" data-i18n="premium.import_text">📝 Import Text</button>
+                                <button id="exportTextBtn" class="btn-premium" data-i18n="premium.export_text">📋 Export Text</button>
+                                <button id="shareBannerBtn" class="btn-premium share-btn" data-i18n="premium.share">🔗 Share Link</button>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-2 mt-1">
+                                <button id="importFileBtn" class="btn-premium import-file-btn" data-i18n="premium.import_file">📂 Import File</button>
+                                <button id="exportFileBtn" class="btn-premium export-file-btn" data-i18n="premium.export_file">📄 Export File</button>
+                                <button id="geminiGemBtn" class="btn-premium" style="background-color: #8b5cf6; border-color: #6d28d9;" data-i18n="premium.gemini_gem">✨ Ask Gemini</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_input_label" data-max-width="750px" data-max-height="120px"></div>
+                </fieldset>
+                <div class="profile_input_label" data-max-height="120px"></div>
+
+                <!-- Plugin Configurations Section -->
+                <fieldset id="feature-plugins" class="w-full" style="margin-top: 5px; margin-bottom: 15px; border: 2px dashed #8b5cf6; border-radius: 15px; padding: 10px 15px; background: linear-gradient(135deg, #1e1b4b, #312e81); color: #fff; box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);">
+                    <div class="text-center w-full mb-2">
+                        <span class="rainbow font-bold text-lg" style="font-size: 20px;" data-i18n="plugins.title">&nbsp;Plugin Configurations&nbsp;</span> 🚀
+                        <div class="text-xs text-gray-300 mt-1" data-i18n="plugins.desc" style="line-height: 1.2;">Generate configurations for various supported plugins. It changes automatically!</div>
+                    </div>
+                    <div class="flex items-center gap-4 justify-center w-full" id="pluginCycleContainer" style="position: relative;">
+                        <a id="pluginLogoLink" href="#" target="_blank" class="flex-shrink-0">
+                            <img id="pluginLogo" src="https://i.imgur.com/rmk0Zm6.png" class="w-16 h-16 transition-transform hover:scale-105" style="image-rendering: pixelated; filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));">
+                        </a>
+                        <div class="flex flex-col text-center w-full flex-1 min-w-0">
+                            <a id="pluginTitleLink" href="#" target="_blank" class="text-pink-400 font-bold text-lg leading-tight hover:text-pink-300 transition-colors" style="font-family: 'MinecraftBold'; text-decoration: none;"></a>
+                            <span class="text-gray-300 text-xs mb-1" id="pluginDesc"></span>
+                            <textarea id="pluginConfigArea" class="w-full p-2 rounded bg-black/50 text-pink-200 border border-pink-800/50 text-xs font-mono whitespace-pre overflow-x-auto overflow-y-hidden" readonly rows="2" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="showcase-container">
+                <fieldset class="showcase-box"><legend class="showcase-legend" data-i18n="showcase.pixelart">Looking for a pixelart like this? 💎</legend><img src="https://raw.githubusercontent.com/AlonsoAliaga/rank-textures/main/assets/showcase/pixelart-showcase.png" class="showcase-img" onclick="window.open('https://alonsoaliaga.com/mcpfp', '_blank');"></fieldset>
+                <fieldset class="showcase-box"><legend class="showcase-legend" data-i18n="showcase.render">Looking for a render like this one? 💎</legend><img src="https://raw.githubusercontent.com/AlonsoAliaga/rank-textures/main/assets/showcase/render-showcase.png" class="showcase-img" onclick="window.open('https://alonsoaliaga.com/mc-renders', '_blank');"></fieldset>
+                <fieldset class="showcase-box"><legend class="showcase-legend" data-i18n="showcase.animation">Looking for an animation like this one? 💎</legend><img src="https://raw.githubusercontent.com/AlonsoAliaga/rank-textures/main/assets/showcase/skin-showcase.gif" class="showcase-img" onclick="window.open('https://alonsoaliaga.com/mc-skin', '_blank');"></fieldset>
+            </div>
+            <div class="options">
+                <div style="border-radius: 25px;font-size: 18px ;padding-top: 20px;padding-bottom: 20px; font-family: MinecraftRegular;" class="examples">
+                    <h2 style="font-size: 18px; font-family: MinecraftBold;" data-i18n="tools.title">More tools for you:</h2>
+                    <div style="text-align: left;font-size: 20px; margin-top: 5px;" id="tools-for-you"></div><br>
+                    <a href="https://alonsoaliaga.github.io" rel="noopener" target="_blank" style="font-size: 18px; font-family: MinecraftBold; color: var(--link-color); text-decoration: none;">AlonsoAliaga Development</a>
+                </div>
+            </div>
+            <h2 style="font-size: 15px ;text-align: center; margin-top: 10px;" data-i18n="footer.thanks">Thanks to <a href="https://alonsoaliaga.com/donate" rel="noopener" target="_blank" style="color:var(--link-color);">AlonsoAliaga</a> and <a href="https://google.com" rel="noopener" target="_blank" style="color:var(--link-color);">Gemini</a> for his hard work during the development of this tool.</h2><br>
+            <div class="profile_input_label" data-max-width="750px" data-max-height="120px"></div>
+        </div>
+        <div class="ad-space"></div>
+    </div>
+    <div id="mybutton">
+        <a href="https://alonsoaliaga.github.io"><img class="floating-icon" src="https://raw.githubusercontent.com/AlonsoAliaga/alonsoaliaga.github.io/main/assets/img/apple-touch-icon.png"></a>
+        <div id="visitor-counter"><span id="counter-amount" style="font-family: MinecraftBold;font-weight: bold;">Visits: 0</span></div>
+    </div>
+    <div id="errorPopup" class="error-popup">
+        <span style="font-size: 20px;">⚠️</span>
+        <div style="text-align: center;"><div style="font-weight: bold; font-size: 16px;">Error!</div><div style="font-size: 12px; opacity: 0.9;" id="errorMsg">Something went wrong.</div></div>
+        <span style="font-size: 20px;">⚠️</span>
+    </div>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5185973148525065" crossorigin="anonymous"></script>
+    <script>
+        let debugShare = true;
+        if (typeof kofiWidgetOverlay !== 'undefined') { kofiWidgetOverlay.draw('alonsoaliaga', { 'type': 'floating-chat', 'floating-chat.donateButton.text': 'Send love ❤️', 'floating-chat.donateButton.background-color': '#fcbf47', 'floating-chat.donateButton.text-color': '#323842' }); }
+        function processAds() {
+            const lockContainers = [ 
+                {id: 'feature-premium', text: 'Disable AdBlock to use Premium Settings 👑'},
+                //{id: 'feature-plugins', text: 'Disable AdBlock to use Plugin Configs 🚀'} 
+            ];
+            lockContainers.forEach(feature => {
+                const el = document.getElementById(feature.id);
+                if(el && !el.querySelector('.ad-locked-overlay')) {
+                    const overlay = document.createElement('div'); overlay.className = 'ad-locked-overlay';
+                    const fontSize = feature.small ? '10px' : '14px';
+                    overlay.innerHTML = `<span class="emoji" style="font-size: 16px;">🔒</span><span class="text" style="font-size: ${fontSize};">${feature.text}</span>`;
+                    el.appendChild(overlay);
+                    el.style.maxHeight = '150px';
+                    el.style.overflow = 'hidden';
+                }
+            });
+            layer();
+        }
+        const darkModeCheck = document.getElementById('darkModeCheck'); const body = document.body;
+        darkModeCheck.addEventListener('change', () => { if (darkModeCheck.checked) body.classList.add('dark-mode'); else body.classList.remove('dark-mode'); });
+        function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.style.opacity = '1'; setTimeout(() => { t.style.opacity = '0'; }, 2500); }
+        function showErrorPopup(msg = "Unknown Error") { const el = document.getElementById('errorPopup'); document.getElementById('errorMsg').textContent = msg; el.classList.add('show'); setTimeout(() => { el.classList.remove('show'); }, 4000); }
+        function checkSite(window) {
+            fetch('https://raw.githubusercontent.com/AlonsoAliaga/AlonsoAliagaAPI/refs/heads/main/api/tools/tools-list.json').then(res => res.json()).then(content => {
+                let toolsArray = []; 
+                for(let toolData of content) { 
+                    let clazz = typeof toolData.clazz == "undefined" ? "" : ` class="${toolData.clazz}"`; 
+                    let style = typeof toolData.style == "undefined" ? "" : ` style="${toolData.style}"`; 
+                    toolsArray.push(`<span>💠</span> <a title="${toolData.description}" id="tool-priority-${toolData.priority}" href="${toolData.link}" target="_blank"${clazz}${style}>${toolData.name}</a>`); 
+                } 
+                document.getElementById("tools-for-you").innerHTML = toolsArray.join(`<br>`);
+            }).catch(err => console.log("Tools fetch error:", err));
+            setTimeout(()=>{ return; let href = window.location.href; if(!href.includes(atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw=="))) { try{document.title = `Page stolen from https://${atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw==")}`;}catch(e){} window.location = `https://${atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw==")}/mcpfp/`} });
+            setTimeout(()=>{if(typeof window.getRandomStyle == "undefined" || myTimeout != undefined || typeof adBlockEnabled == "undefined" || adBlockEnabled) processAds()},1500);
+        }
+        function loadChecking() {
+            let href = window.location.href; if(!href.includes(atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw=="))) return;
+            let link = atob("aHR0cHM6Ly9hbG9uc29hcGkuZGlzY2xvdWQuYXBwL2NoZWNraW5nP3NpdGU9PHNpdGU+JmtleT08a2V5PiZsb2NrPTxsb2NrPg==").replace(/<site>/g,"banner-generator").replace(/<key>/g,"KEY-A").replace(/<lock>/g,(typeof window.getRandomStyle == "undefined" || myTimeout != undefined || typeof adBlockEnabled == "undefined" || adBlockEnabled) ? "yes" : "no");
+            let counter = document.getElementById("online-counter");
+            if(counter) { $.ajax({ url: link, type: "GET", dataType: "json", data: {}, success: function (result) { counter.dataset.failed = "0"; counter.style.display = "flex"; if(isNaN(result)) { counter.textContent = `🟡 Report issues on Discord.`; counter.style.backgroundColor = "yellow"; counter.style.color = "black"; } else { counter.textContent = `🟢 ${result} online using our Tool!`; counter.style.backgroundColor = "green"; counter.style.color = "white"; } }, error: function (e) { if(counter.style.display != "none") { let currentFails = +counter.dataset.failed || 0; if(currentFails >= 1){ counter.style.display = "none" } else { counter.textContent = `🔴 Check your internet connection!`; counter.style.backgroundColor = "#7c0000"; counter.dataset.failed = `${currentFails + 1}` } } } }); }
+        }
+        let times = 0;
+        function loadCounter() {
+            let href = window.location.href; if(!href.includes(atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw=="))) return;
+            let link = atob("aHR0cHM6Ly9hbG9uc29hcGkuZGlzY2xvdWQuYXBwL2NvdW50ZXI/c2l0ZT08c2l0ZT4ma2V5PTxrZXk+").replace(/<site>/g,"banner-generator").replace(/<key>/g,"KEY-A"); let counter = document.getElementById("visitor-counter");
+            if(counter) { $.ajax({ url: link, type: "GET", dataType: "json", data: {}, success: function (result) { if(isNaN(result)) document.getElementById("counter-amount").innerHTML = "Click to return!"; else document.getElementById("counter-amount").innerHTML = `Visits: ${result}`; }, error: function (e) { times++; document.getElementById("counter-amount").innerHTML = "Click to return!"; if(times <= 1) { setTimeout(()=>{ loadCounter(); },1000*10); } } }); }
+        }
+        const AVAILABLE_LANGUAGES = ['en', 'es', 'fr', 'it', 'zh', 'ja', 'ko', 'de', 'ar', 'ga'];
+        const DEFAULT_LANGUAGE = 'en'; let currentLanguage = DEFAULT_LANGUAGE;
+        const TRANSLATIONS = {
+            "en": { "desc.title": "Why using this tool?", "desc.tagline": "Create your best banner and surprise everyone!", "warning.browser": "Use Google Chrome or Opera for a better experience. Edge is reported as not compatible!", "desc.text1": "Let's be honest, there are many tools to create banners out there, but only this one is incredibly simple to use and features intuitive tools like drag-and-drop layers, multiple languages, <span class='rainbow'>and everything in one place!</span>", "desc.discord": "⚠️ If you have cool ideas, suggest them in our <a href='https://alonsoaliaga.com/discord' style='text-decoration:underline;'>official discord server</a>.", "desc.donate": "<img width='15px' src='https://i.imgur.com/Ef9FOQm.png' style='vertical-align: middle; display: inline-block; margin-bottom: 2px;'> If you found this tool useful, consider <a href='https://alonsoaliaga.com/donate' style='text-decoration:underline;'>making a donation</a> for our hard work. We appreciate it!", "options.site_options": "Site options:", "options.dark_mode": "Dark Mode 👁️‍🗨️", "options.button_auto": "🤖 AUTO", "sidebar.layers": "&nbsp;Layers 🗂️&nbsp;", "sidebar.patterns": "&nbsp;Patterns 🖌️&nbsp;", "sidebar.colors": "&nbsp;Colors 🎨&nbsp;", "premium.title": "&nbsp;Premium Settings&nbsp;", "premium.unlimited": "Unlimited Layers", "premium.shield": "Shield Mode", "premium.colored_preview": "Colored Previews", "premium.show_spigot": "Show Spigot Code", "premium.show_give": "Show Give Command", "premium.label_spigot": "Spigot API Java Code:", "premium.label_give": "In-Game Give Command:", "premium.code_warning": "⚠️ There might be errors, report them in our <a href='https://alonsoaliaga.com/discord' style='text-decoration:underline; color:#5555ff;'>Discord</a>.", "premium.textarea_ph": "Paste JSON string or Minecraft command here...", "premium.export_file": "📄 Export File", "premium.import_file": "📂 Import File", "premium.export_text": "📋 Export Text", "premium.import_text": "📝 Import Text", "premium.share": "🔗 Share Link", "premium.gemini_gem": "✨ Ask Gemini", "plugins.title": "Plugin Configurations", "plugins.desc": "Generate configurations for various supported plugins. It changes automatically!", "layer.base": "Base", "layer.num": "Layer #", "btn.clear": "🧹 Clear", "btn.delete": "🗑️ Delete", "toast.copied": "Copied to clipboard!", "showcase.pixelart": "Looking for a pixelart like this? 💎", "showcase.render": "Looking for a render like this one? 💎", "showcase.animation": "Looking for an animation like this one? 💎", "tools.title": "More tools for you:", "footer.thanks": "Thanks to <a href='https://alonsoaliaga.com/donate' rel='noopener' target='_blank' style='color:var(--link-color);'>AlonsoAliaga</a> and <a href='https://google.com' rel='noopener' target='_blank' style='color:var(--link-color);'>Gemini</a> for his hard work during the development of this tool." },
+            "es": { "desc.title": "¿Por qué usar esta herramienta?", "desc.tagline": "¡Crea tu mejor banner y sorprende a todos!", "warning.browser": "Usa Google Chrome u Opera para una mejor experiencia. ¡Edge se reporta como no compatible!", "desc.text1": "Seamos honestos, hay muchas herramientas para crear banners ahí fuera, pero solo esta es increíblemente sencilla de usar y cuenta con herramientas intuitivas como arrastrar y soltar capas, múltiples idiomas, <span class='rainbow'>¡y todo en un solo lugar!</span>", "desc.discord": "⚠️ Si tienes buenas ideas, sugiérelas en nuestro <a href='https://alonsoaliaga.com/discord' style='text-decoration:underline;'>servidor oficial de discord</a>.", "desc.donate": "<img width='15px' src='https://i.imgur.com/Ef9FOQm.png' style='vertical-align: middle; display: inline-block; margin-bottom: 2px;'> Si encuentras útil esta herramienta, considera <a href='https://alonsoaliaga.com/donate' style='text-decoration:underline;'>hacer una donación</a> por nuestro duro trabajo. ¡Lo apreciamos!", "options.site_options": "Opciones:", "options.dark_mode": "Modo Oscuro 👁️‍🗨️", "options.button_auto": "🤖 AUTO", "sidebar.layers": "&nbsp;Capas 🗂️&nbsp;", "sidebar.patterns": "&nbsp;Patrones 🖌️&nbsp;", "sidebar.colors": "&nbsp;Colores 🎨&nbsp;", "premium.title": "&nbsp;Ajustes Premium&nbsp;", "premium.unlimited": "Capas Ilimitadas", "premium.shield": "Modo Escudo", "premium.colored_preview": "Vista Coloreada", "premium.show_spigot": "Mostrar código Spigot", "premium.show_give": "Mostrar comando Give", "premium.label_spigot": "Código Java de Spigot API:", "premium.label_give": "Comando Give en el juego:", "premium.code_warning": "⚠️ Podrían haber errores, repórtalos en nuestro <a href='https://alonsoaliaga.com/discord' style='text-decoration:underline; color:#5555ff;'>Discord</a>.", "premium.textarea_ph": "Pega el texto JSON o Comando de Minecraft aquí...", "premium.export_file": "📄 Exportar Archivo", "premium.import_file": "📂 Importar Archivo", "premium.export_text": "📋 Exportar Texto", "premium.import_text": "📝 Importar Texto", "premium.share": "🔗 Compartir", "premium.gemini_gem": "✨ Preguntar a Gemini", "plugins.title": "Configuraciones de Plugins", "plugins.desc": "Genera configuraciones para varios plugins soportados. ¡Cambia automáticamente!", "layer.base": "Base", "layer.num": "Capa #", "btn.clear": "🧹 Limpiar", "btn.delete": "🗑️ Eliminar", "toast.copied": "¡Copiado al portapapeles!", "showcase.pixelart": "¿Buscas un pixelart como este? 💎", "showcase.render": "¿Buscas un render como este? 💎", "showcase.animation": "¿Buscas una animación como esta? 💎", "tools.title": "Más herramientas para ti:", "footer.thanks": "Gracias a <a href='https://alonsoaliaga.com/donate' rel='noopener' target='_blank' style='color:var(--link-color);'>AlonsoAliaga</a> y <a href='https://google.com' rel='noopener' target='_blank' style='color:var(--link-color);'>Gemini</a> por su arduo trabajo durante el desarrollo de esta herramienta." }
+        };
+        function resolveLanguage() { let lang = navigator.language || navigator.userLanguage || DEFAULT_LANGUAGE; lang = lang.split('-')[0].toLowerCase(); return AVAILABLE_LANGUAGES.includes(lang) ? lang : DEFAULT_LANGUAGE; }
+        
+        async function loadLanguage(lang) {
+            const isLocalFile = window.location.protocol === 'file:';
+            if(!isLocalFile) {
+                try {
+                    const resp = await fetch(`lang/${lang}.json`);
+                    if(resp.ok) {
+                        const data = await resp.json();
+                        TRANSLATIONS[lang] = data; 
+                        return data;
+                    }
+                } catch(e) { /* Fallback to embedded */ }
+            }
+            return TRANSLATIONS[lang] || TRANSLATIONS[DEFAULT_LANGUAGE];
+        }
+        
+        function getTranslation(key, params = {}) { const data = TRANSLATIONS[currentLanguage] || TRANSLATIONS[DEFAULT_LANGUAGE]; let value = data[key]; if(!value) return key; for(const [pKey, pVal] of Object.entries(params)) { value = value.replace(`{{${pKey}}}`, pVal); } return value; }
+        function applyTranslations() { document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if(key.startsWith('[')) { const match = key.match(/^\[(.*?)\](.*)/); if(match) { el.setAttribute(match[1], getTranslation(match[2])); } } else { el.innerHTML = getTranslation(key); } }); renderLayersList(); updateGlobalLayerButtons(); }
+        async function setLanguage(lang) { if(lang === 'auto') lang = resolveLanguage(); if(!AVAILABLE_LANGUAGES.includes(lang)) lang = DEFAULT_LANGUAGE; currentLanguage = lang; await loadLanguage(lang); applyTranslations(); document.querySelectorAll('.lang-flag').forEach(img => { img.classList.toggle('active', img.dataset.lang === lang); }); document.getElementById('langAutoBtn').classList.toggle('opacity-50', lang !== resolveLanguage()); }
+        function initFlags() { const container = document.getElementById('flagsContainer'); const flags = { 'en': 'us', 'es': 'es', 'fr': 'fr', 'it': 'it', 'zh': 'cn', 'ja': 'jp', 'ko': 'kr', 'de': 'de', 'ar': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_the_Arab_League.svg/1920px-Flag_of_the_Arab_League.svg.png', 'ga': 'ie' }; AVAILABLE_LANGUAGES.forEach(lang => { const img = document.createElement('img'); if(flags[lang].startsWith("http")) img.src = flags[lang]; else img.src = `https://flagcdn.com/w40/${flags[lang]}.png`; img.className = 'lang-flag'; img.dataset.lang = lang; img.title = lang.toUpperCase(); img.onclick = () => setLanguage(lang); container.appendChild(img); }); document.getElementById('langAutoBtn').onclick = () => setLanguage('auto'); }
+        let myTimeout;
+        
+        let initialPattern = "CREEPER";
+        let initialColor = "black";
+        
+        let colors = {
+            "white": { icon: "https://minecraft.wiki/images/Invicon_White_Dye.png", color: "#bdc1c1"},
+            "orange": { icon: "https://minecraft.wiki/images/Invicon_Orange_Dye.png", color: "#bd6116"}, "magenta": { icon: "https://minecraft.wiki/images/Invicon_Magenta_Dye.png", color: "#973b8f"},
+            "light_blue": { icon: "https://minecraft.wiki/images/Invicon_Light_Blue_Dye.png", color: "#55FFFF"}, "yellow": { icon: "https://minecraft.wiki/images/Invicon_Yellow_Dye.png", color: "#c0a32e"},
+            "lime": { icon: "https://minecraft.wiki/images/Invicon_Lime_Dye.png", color: "#619617"}, "pink": { icon: "https://minecraft.wiki/images/Invicon_Pink_Dye.png", color: "#b76980"},
+            "gray": { icon: "https://minecraft.wiki/images/Invicon_Gray_Dye.png", color: "#363c3e"}, "light_gray": { icon: "https://minecraft.wiki/images/Invicon_Light_Gray_Dye.png", color: "#767672"},
+            "cyan": { icon: "https://minecraft.wiki/images/Invicon_Cyan_Dye.png", color: "#117676"}, "purple": { icon: "https://minecraft.wiki/images/Invicon_Purple_Dye.png", color: "#68268b"},
+            "blue": { icon: "https://minecraft.wiki/images/Invicon_Blue_Dye.png", color: "#2d3381"}, "brown": { icon: "https://minecraft.wiki/images/Invicon_Brown_Dye.png", color: "#634026"},
+            "green": { icon: "https://minecraft.wiki/images/Invicon_Green_Dye.png", color: "#475e11"}, "red": { icon: "https://minecraft.wiki/images/Invicon_Red_Dye.png", color: "#85231d"},
+            "black": { icon: "https://minecraft.wiki/images/Invicon_Black_Dye.png", color: "#161619"}
+        };
+        
+        const colorIds = { "white":0, "orange":1, "magenta":2, "light_blue":3, "yellow":4, "lime":5, "pink":6, "gray":7, "light_gray":8, "cyan":9, "purple":10, "blue":11, "brown":12, "green":13, "red":14, "black":15 };
+        const patternCodes = { "BASE":"b", "BORDER":"bo", "BRICKS":"bri", "CIRCLE":"mc", "CREEPER":"cre", "CROSS":"cr", "CURLY_BORDER":"cbo", "DIAGONAL_LEFT":"ld", "DIAGONAL_RIGHT":"rd", "DIAGONAL_UP_LEFT":"lud", "DIAGONAL_UP_RIGHT":"rud", "FLOWER":"flo", "GLOBE":"glb", "GRADIENT":"gra", "GRADIENT_UP":"gru", "HALF_HORIZONTAL":"hh", "HALF_HORIZONTAL_BOTTOM":"hhb", "HALF_VERTICAL":"vh", "HALF_VERTICAL_RIGHT":"vhr", "MOJANG":"moj", "PIGLIN":"pig", "RHOMBUS":"mr", "SKULL":"sku", "SMALL_STRIPES":"ss", "SQUARE_BOTTOM_LEFT":"bl", "SQUARE_BOTTOM_RIGHT":"br", "SQUARE_TOP_LEFT":"tl", "SQUARE_TOP_RIGHT":"tr", "STRAIGHT_CROSS":"sc", "STRIPE_BOTTOM":"bs", "STRIPE_CENTER":"cs", "STRIPE_DOWNLEFT":"dls", "STRIPE_DOWNRIGHT":"drs", "STRIPE_LEFT":"ls", "STRIPE_MIDDLE":"ms", "STRIPE_RIGHT":"rs", "STRIPE_TOP":"ts", "TRIANGLE_BOTTOM":"bt", "TRIANGLE_TOP":"tt", "TRIANGLES_BOTTOM":"bts", "TRIANGLES_TOP":"tts", "FLOW":"flw", "GUSTER":"gus" };
+        const spigotPatternMap = { "CIRCLE": "CIRCLE_MIDDLE", "RHOMBUS": "RHOMBUS_MIDDLE", "SMALL_STRIPES": "STRIPE_SMALL" };
+
+        let _pattern_map = { "BASE": "base", "BORDER": "border", "BRICKS": "bricks", "CIRCLE": "circle", "CREEPER": "creeper", "CROSS": "cross", "CURLY_BORDER": "curly_border", "DIAGONAL_LEFT": "diagonal_left", "DIAGONAL_RIGHT": "diagonal_right", "DIAGONAL_UP_LEFT": "diagonal_up_left", "DIAGONAL_UP_RIGHT": "diagonal_up_right", "FLOWER": "flower", "GLOBE": "globe", "GRADIENT": "gradient", "GRADIENT_UP": "gradient_up", "HALF_HORIZONTAL": "half_horizontal", "HALF_HORIZONTAL_BOTTOM": "half_horizontal_bottom", "HALF_VERTICAL": "half_vertical", "HALF_VERTICAL_RIGHT": "half_vertical_right", "MOJANG": "mojang", "PIGLIN": "piglin", "RHOMBUS": "rhombus", "SKULL": "skull", "SMALL_STRIPES": "small_stripes", "SQUARE_BOTTOM_LEFT": "square_bottom_left", "SQUARE_BOTTOM_RIGHT": "square_bottom_right", "SQUARE_TOP_LEFT": "square_top_left", "SQUARE_TOP_RIGHT": "square_top_right", "STRAIGHT_CROSS": "straight_cross", "STRIPE_BOTTOM": "stripe_bottom", "STRIPE_CENTER": "stripe_center", "STRIPE_DOWNLEFT": "stripe_downleft", "STRIPE_DOWNRIGHT": "stripe_downright", "STRIPE_LEFT": "stripe_left", "STRIPE_MIDDLE": "stripe_middle", "STRIPE_RIGHT": "stripe_right", "STRIPE_TOP": "stripe_top", "TRIANGLE_BOTTOM": "triangle_bottom", "TRIANGLE_TOP": "triangle_top", "TRIANGLES_BOTTOM": "triangles_bottom", "TRIANGLES_TOP": "triangles_top", "FLOW": "flow", "GUSTER": "guster" };
+        
+        let baseUrl = window.location.href.includes("127.0.0.1") ? "../assets/banner/" : "https://raw.githubusercontent.com/Freeder1k/NiaBot/2afbc534636a5818171fac087b8cb3bfaea2f951/assets/banner/";
+        let baseShieldUrl = window.location.href.includes("127.0.0.1") ? "../assets/shield/" : "https://raw.githubusercontent.com/Freeder1k/NiaBot/2afbc534636a5818171fac087b8cb3bfaea2f951/assets/banner/";
+        let fastLoad = false;
+        let imageCache = {}; let shieldImageCache = {}; let bufferCache = {}; let shieldBufferCache = {};
+        
+        let savedColoredPreviews = localStorage.getItem("coloredPreviews") === "true";
+        let state = { layers: [{pattern: 'BASE', color: 'white'}], selectedLayer: 0, unlimited: false, shieldMode: false, coloredPreviews: savedColoredPreviews };
+        let activeLayerIndex = 0; let draggedIndex = null;
+        
+        let currentPluginIdx = 0;
+        const supportedPlugins = [
+            { 
+                id: 'alonsotagspro', 
+                title: 'AlonsoTagsPro Support 💎', 
+                desc: 'Since v2.3.1-BETA-PRO, you can use this directly in any tag from tags.yml file!', 
+                logo: 'https://i.imgur.com/rmk0Zm6.png',
+                link: 'https://alonsoaliaga.com/AlonsoTagsPro',
+                getCode: (layers, isShield) => {
+                    let baseCol = layers[0].color.toUpperCase();
+                    let mat = `"${baseCol}_BANNER"`;
+                    let pats = layers.slice(1).map(l => {
+                        let pType = spigotPatternMap[l.pattern] || l.pattern;
+                        return `${pType},${l.color.toUpperCase()}`;
+                    }).join(';');
+                    return `Material: ${mat}\nPattern: "${pats}"`;
+                }
+            }
+        ];
+
+        async function preloadAssets() {
+            for(let key in _pattern_map) {
+                let img = new Image(); img.crossOrigin = "Anonymous";
+                let shieldImg = new Image(); shieldImg.crossOrigin = "Anonymous";
+                
+                let p1 = new Promise(r => { 
+                    img.onload = r; 
+                    img.onerror = () => {
+                        console.warn(`Failed to load banner pattern ${key}, fallback to CREEPER`);
+                        img.onload = r; 
+                        img.onerror = r; 
+                        img.src = baseUrl + _pattern_map["CREEPER"] + ".png"; 
+                    }; 
+                    img.src = baseUrl + _pattern_map[key] + ".png"; 
+                });
+                let p2 = new Promise(r => { 
+                    shieldImg.onload = r; 
+                    shieldImg.onerror = () => {
+                        console.warn(`Failed to load shield pattern ${key}, fallback to CREEPER`);
+                        shieldImg.onload = r; 
+                        shieldImg.onerror = r; 
+                        shieldImg.src = baseShieldUrl + _pattern_map["CREEPER"] + ".png"; 
+                    }; 
+                    shieldImg.src = baseShieldUrl + _pattern_map[key] + ".png"; 
+                });
+                
+                await Promise.all([p1, p2]);
+                imageCache[key] = img;
+                shieldImageCache[key] = shieldImg;
+                
+                if(fastLoad) { for(let c in colors) { getPatternBuffer(key, colors[c].color, false); getPatternBuffer(key, colors[c].color, true); } }
+            }
+            renderBanner(); renderLayersList(); updateGlobalLayerButtons();
+        }
+
+        function getPatternBuffer(patternKey, colorHex, isShield) {
+            let cacheKey = patternKey + "_" + colorHex;
+            let targetCache = isShield ? shieldBufferCache : bufferCache;
+            if(targetCache[cacheKey]) return targetCache[cacheKey];
+            
+            let img = isShield ? shieldImageCache[patternKey] : imageCache[patternKey]; 
+            if(!img) return null;
+            
+            let canvas = document.createElement('canvas');
+            canvas.width = img.width; canvas.height = img.height;
+            let ctx = canvas.getContext('2d');
+            if(patternKey === "BASE") {
+                ctx.fillStyle = colorHex; ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = "destination-in"; ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            } else {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = "source-in"; ctx.fillStyle = colorHex; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+            targetCache[cacheKey] = canvas; return canvas;
+        }
+        
+        function updatePluginConfig() {
+            if(supportedPlugins.length === 0) return;
+            let plugin = supportedPlugins[currentPluginIdx];
+            let linkEl = document.getElementById('pluginTitleLink');
+            linkEl.innerText = plugin.title;
+            linkEl.href = plugin.link || '#';
+            document.getElementById('pluginLogoLink').href = plugin.link || '#';
+            document.getElementById('pluginDesc').innerText = plugin.desc;
+            document.getElementById('pluginLogo').src = plugin.logo;
+            document.getElementById('pluginConfigArea').value = plugin.getCode(state.layers, state.shieldMode);
+        }
+
+        function updateCodeGenerators() {
+            if(document.getElementById('showSpigotToggle').checked) {
+                let baseColorKey = state.layers[0].color.toUpperCase();
+                let code = "";
+                if(state.shieldMode) {
+                    code += `ItemStack item = new ItemStack(Material.SHIELD);\n`;
+                    code += `BlockStateMeta meta = (BlockStateMeta) item.getItemMeta();\n`;
+                    code += `Banner banner = (Banner) meta.getBlockState();\n`;
+                    code += `banner.setBaseColor(DyeColor.${baseColorKey});\n`;
+                    state.layers.slice(1).forEach(l => {
+                        let pType = spigotPatternMap[l.pattern] || l.pattern;
+                        code += `banner.addPattern(new Pattern(DyeColor.${l.color.toUpperCase()}, PatternType.${pType}));\n`;
+                    });
+                    code += `banner.update();\n`;
+                    code += `meta.setBlockState(banner);\n`;
+                    code += `item.setItemMeta(meta);`;
+                } else {
+                    code += `ItemStack banner = new ItemStack(Material.${baseColorKey}_BANNER);\n`;
+                    code += `BannerMeta bannerMeta = (BannerMeta) banner.getItemMeta();\n`;
+                    if(state.layers.length > 1) {
+                        state.layers.slice(1).forEach(l => {
+                            let pType = spigotPatternMap[l.pattern] || l.pattern;
+                            code += `bannerMeta.addPattern(new Pattern(DyeColor.${l.color.toUpperCase()}, PatternType.${pType}));\n`;
+                        });
+                    }
+                    code += `banner.setItemMeta(bannerMeta);`;
+                }
+                let spigotArea = document.getElementById('spigotCodeArea');
+                spigotArea.value = code;
+                spigotArea.rows = Math.min(15, Math.max(3, code.split('\n').length));
+            }
+            
+            if(document.getElementById('showGiveToggle').checked) {
+                let baseColorKey = state.layers[0].color;
+                let baseColorId = colorIds[baseColorKey];
+                let patternsStr = state.layers.slice(1).map(l => `{Color:${colorIds[l.color]},Pattern:"${patternCodes[l.pattern]}"}`).join(',');
+                let code = "";
+                if(state.shieldMode) {
+                    code = `/minecraft:give @p minecraft:shield{BlockEntityTag:{Base:${baseColorId}${patternsStr ? ',Patterns:['+patternsStr+']' : ''}}}`;
+                } else {
+                    code = `/minecraft:give @p minecraft:${baseColorKey}_banner${patternsStr ? '{BlockEntityTag:{Patterns:['+patternsStr+']}}' : ''}`;
+                }
+                let giveArea = document.getElementById('giveCodeArea');
+                giveArea.value = code;
+                giveArea.rows = Math.min(6, Math.max(2, Math.ceil(code.length / 60)));
+            }
+            
+            updatePluginConfig();
+        }
+
+        function renderBanner() {
+            let cvs = document.getElementById('bannerCanvas'); let ctx = cvs.getContext('2d');
+            
+            if(state.shieldMode) {
+                cvs.width = 24; cvs.height = 44; 
+                ctx.clearRect(0, 0, cvs.width, cvs.height);
+                ctx.imageSmoothingEnabled = false; 
+
+                state.layers.forEach(layer => {
+                    let buf = getPatternBuffer(layer.pattern, colors[layer.color].color, true);
+                    if(buf) ctx.drawImage(buf, 0, 0, buf.width, buf.height, 2, 2, 20, 40); 
+                });
+
+                let bw = 2; 
+                let w = 24;
+                let h = 44;
+                let h4 = Math.floor(h / 4); // 11
+                let h34 = h - h4; // 33
+
+                // Inferior (#9397a1)
+                ctx.fillStyle = "#9397a1";
+                ctx.fillRect(0, h34, bw, h4); 
+                ctx.fillRect(w - bw, h34, bw, h4); 
+                ctx.fillRect(bw, h - bw, w - 2*bw, bw); 
+
+                // Esquinas superiores (#b2b6bf)
+                ctx.fillStyle = "#b2b6bf";
+                ctx.fillRect(0, 0, bw, bw); 
+                ctx.fillRect(w - bw, 0, bw, bw); 
+
+                // Rectangulos medios (#b2b6bf)
+                let midY = Math.floor(h / 2) - bw; 
+                ctx.fillRect(0, midY, bw, bw * 2); 
+                ctx.fillRect(w - bw, midY, bw, bw * 2); 
+
+                // Resto de bordes (#c9c7c8)
+                ctx.fillStyle = "#c9c7c8";
+                ctx.fillRect(bw, 0, w - 2*bw, bw); 
+                ctx.fillRect(0, bw, bw, midY - bw); 
+                ctx.fillRect(0, midY + bw*2, bw, h34 - (midY + bw*2)); 
+                ctx.fillRect(w - bw, bw, bw, midY - bw); 
+                ctx.fillRect(w - bw, midY + bw*2, bw, h34 - (midY + bw*2)); 
+            } else {
+                cvs.width = 20; cvs.height = 40;
+                ctx.clearRect(0, 0, cvs.width, cvs.height);
+                state.layers.forEach(layer => {
+                    let buf = getPatternBuffer(layer.pattern, colors[layer.color].color, false);
+                    if(buf) ctx.drawImage(buf, 0, 0);
+                });
+            }
+
+            updateLayerPreviews();
+            updateCodeGenerators();
+        }
+        function updateLayerPreviews() {
+            state.layers.forEach((layer, i) => {
+                let p = document.getElementById(`preview-${i}`);
+                if(p) { 
+                    let ctx = p.getContext('2d'); ctx.clearRect(0, 0, p.width, p.height);
+                    let baseColor = state.coloredPreviews ? colors[state.layers[0].color].color : "#FFFFFF";
+                    if(i === 0) {
+                        let baseBuf = getPatternBuffer("BASE", baseColor, false); if(baseBuf) ctx.drawImage(baseBuf, 0, 0);
+                    } else {
+                        let pColor = state.coloredPreviews ? colors[layer.color].color : "#000000";
+                        let baseBuf = getPatternBuffer("BASE", "#FFFFFF", false); if(baseBuf) ctx.drawImage(baseBuf, 0, 0);
+                        let buf = getPatternBuffer(layer.pattern, pColor, false); if(buf) ctx.drawImage(buf, 0, 0);
+                    }
+                }
+            });
+        }
+        function updateGlobalLayerButtons() {
+            let btnClear = document.getElementById('btnClearLayer');
+            let btnDel = document.getElementById('btnDeleteLayer');
+            if (activeLayerIndex === 0) {
+                btnClear.disabled = true; btnDel.disabled = true;
+            } else {
+                btnClear.disabled = false; btnDel.disabled = false;
+            }
+            
+            let pFieldSet = document.getElementById('patternsFieldSet');
+            if (activeLayerIndex === 0) { pFieldSet.style.display = 'none'; } else { pFieldSet.style.display = 'block'; }
+        }
+        function handleDragOver(e, item, i) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            let rect = item.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let width = rect.width;
+            
+            let pos;
+            if (x < width * 0.25) pos = 'left';
+            else if (x > width * 0.75) pos = 'right';
+            else pos = 'center';
+
+            if (i === 0) pos = 'right'; 
+            
+            item.classList.remove('drag-over-left', 'drag-over-right', 'drag-over-center');
+            item.classList.add('drag-over-' + pos);
+            item.dataset.dropPos = pos;
+        }
+        function handleDrop(e, item, i) {
+            e.preventDefault();
+            item.classList.remove('drag-over-left', 'drag-over-right', 'drag-over-center');
+            if (draggedIndex !== null && draggedIndex !== 0) {
+                let pos = item.dataset.dropPos || 'right';
+                if (i === 0) pos = 'right';
+
+                if (pos === 'center' && i !== 0) {
+                    let temp = state.layers[i];
+                    state.layers[i] = state.layers[draggedIndex];
+                    state.layers[draggedIndex] = temp;
+                    activeLayerIndex = i;
+                } else {
+                    let targetIndex = (pos === 'left') ? i : i + 1;
+                    if (draggedIndex < targetIndex) targetIndex--;
+                    if (targetIndex < 1) targetIndex = 1;
+                    if (targetIndex !== draggedIndex) {
+                        let draggedLayer = state.layers.splice(draggedIndex, 1)[0];
+                        state.layers.splice(targetIndex, 0, draggedLayer);
+                        activeLayerIndex = targetIndex;
+                    }
+                }
+                renderLayersList();
+                renderBanner();
+                updateGlobalLayerButtons();
+            }
+        }
+        function renderLayersList() {
+            let list = document.getElementById('layersList'); list.innerHTML = '';
+            state.layers.forEach((layer, i) => {
+                let item = document.createElement('div'); item.className = `layer-item ${i === activeLayerIndex ? 'active' : ''}`;
+                item.onclick = () => { activeLayerIndex = i; renderLayersList(); buildControls(); updateGlobalLayerButtons(); };
+                
+                if(i !== 0) {
+                    item.draggable = true;
+                    item.ondragstart = (e) => { draggedIndex = i; e.dataTransfer.effectAllowed = 'move'; item.classList.add('dragging'); };
+                    item.ondragend = () => { item.classList.remove('dragging'); draggedIndex = null; document.querySelectorAll('.layer-item').forEach(el=>{el.classList.remove('drag-over-left', 'drag-over-right', 'drag-over-center');}); };
+                }
+                
+                item.ondragover = (e) => handleDragOver(e, item, i);
+                item.ondragleave = () => item.classList.remove('drag-over-left', 'drag-over-right', 'drag-over-center');
+                item.ondrop = (e) => handleDrop(e, item, i);
+                
+                let preview = document.createElement('canvas'); preview.className = 'layer-preview'; preview.id = `preview-${i}`; preview.width = 20; preview.height = 40;
+                let info = document.createElement('div'); info.className = 'layer-info';
+                let layerName = i === 0 ? getTranslation('layer.base') : `${getTranslation('layer.num')}${i}`;
+                
+                let patternHtml = state.coloredPreviews && i !== 0 ? `<br><span style="opacity:0.8; font-size:9px;">${layer.pattern}</span>` : '';
+                info.innerHTML = `<strong>${layerName}</strong>${patternHtml}`;
+                
+                item.appendChild(preview); item.appendChild(info);
+                list.appendChild(item);
+            });
+            updateLayerPreviews(); buildControls(); updateGlobalLayerButtons(); updateCodeGenerators();
+        }
+        function buildControls() {
+            let pGrid = document.getElementById('patternsGrid'); pGrid.innerHTML = '';
+            let cGrid = document.getElementById('colorsGrid'); cGrid.innerHTML = '';
+            let activeLayer = state.layers[activeLayerIndex]; if(!activeLayer) return;
+            for(let key in _pattern_map) {
+                if(activeLayerIndex === 0 && key !== "BASE") continue; if(activeLayerIndex !== 0 && key === "BASE") continue;
+                let btn = document.createElement('div'); btn.className = `pattern-btn ${activeLayer.pattern === key ? 'active' : ''}`; btn.style.backgroundImage = `url(${baseUrl}${_pattern_map[key]}.png)`;
+                btn.onclick = () => { state.layers[activeLayerIndex].pattern = key; renderBanner(); renderLayersList(); }; pGrid.appendChild(btn);
+            }
+            for(let c in colors) {
+                let btn = document.createElement('div'); btn.className = `color-btn ${activeLayer.color === c ? 'active' : ''}`; btn.style.backgroundImage = `url(${colors[c].icon})`;
+                btn.onclick = () => { state.layers[activeLayerIndex].color = c; renderBanner(); renderLayersList(); }; cGrid.appendChild(btn);
+            }
+        }
+        
+        document.getElementById('btnClearLayer').onclick = () => { if(activeLayerIndex !== 0) { state.layers[activeLayerIndex] = {pattern: initialPattern, color: initialColor}; renderLayersList(); renderBanner(); }};
+        document.getElementById('btnDeleteLayer').onclick = () => { if(activeLayerIndex !== 0) { state.layers.splice(activeLayerIndex, 1); if(activeLayerIndex >= state.layers.length) activeLayerIndex = state.layers.length - 1; renderLayersList(); renderBanner(); }};
+        document.getElementById('btnAddLayer').onclick = () => { if(state.layers.length < 7 || state.unlimited) { state.layers.push({pattern: initialPattern, color: initialColor}); activeLayerIndex = state.layers.length - 1; renderLayersList(); renderBanner(); } else { showErrorPopup("Layer limit reached (6). Enable unlimited in Premium!"); } };
+        document.getElementById('btnRemoveLayer').onclick = () => { if(state.layers.length > 1) { state.layers.pop(); activeLayerIndex = state.layers.length - 1; renderLayersList(); renderBanner(); } };
+        
+        document.getElementById('unlimitedLayersToggle').onchange = (e) => { state.unlimited = e.target.checked; };
+        document.getElementById('shieldModeToggle').onchange = (e) => { state.shieldMode = e.target.checked; renderBanner(); };
+        document.getElementById('coloredPreviewsToggle').onchange = (e) => { state.coloredPreviews = e.target.checked; localStorage.setItem("coloredPreviews", e.target.checked); renderLayersList(); };
+        
+        document.getElementById('showSpigotToggle').onchange = (e) => { document.getElementById('spigotCodeContainer').style.display = e.target.checked ? 'block' : 'none'; updateCodeGenerators(); };
+        document.getElementById('showGiveToggle').onchange = (e) => { document.getElementById('giveCodeContainer').style.display = e.target.checked ? 'block' : 'none'; updateCodeGenerators(); };
+
+        function applyLoadedState(parsed) {
+            if (!parsed || !Array.isArray(parsed.layers)) return false;
+            const reverseSpigotMap = { "CIRCLE_MIDDLE": "CIRCLE", "RHOMBUS_MIDDLE": "RHOMBUS", "STRIPE_SMALL": "SMALL_STRIPES" };
+            
+            state.layers = parsed.layers.map(l => {
+                let pat = l.pattern ? l.pattern.toUpperCase() : "CREEPER";
+                let col = l.color ? l.color.toLowerCase() : "black";
+                if (reverseSpigotMap[pat]) pat = reverseSpigotMap[pat];
+                if (!_pattern_map[pat]) pat = "CREEPER";
+                if (!colors[col]) col = "black";
+                return { pattern: pat, color: col };
+            });
+            
+            state.unlimited = parsed.unlimited || state.layers.length > 6 || false;
+            state.shieldMode = parsed.shieldMode || false;
+            state.coloredPreviews = parsed.coloredPreviews || false;
+            state.selectedLayer = parsed.selectedLayer || 0;
+            
+            document.getElementById('unlimitedLayersToggle').checked = state.unlimited; 
+            document.getElementById('shieldModeToggle').checked = state.shieldMode; 
+            document.getElementById('coloredPreviewsToggle').checked = state.coloredPreviews; 
+            localStorage.setItem("coloredPreviews", state.coloredPreviews); 
+            
+            activeLayerIndex = 0; 
+            renderLayersList(); 
+            renderBanner(); 
+            return true;
+        }
+
+        function tryParseBannerData(inputStr) {
+            let parsed = null;
+            try { parsed = JSON.parse(inputStr); } catch (e) {}
+            if (!parsed) {
+                try { parsed = JSON.parse(atob(inputStr)); } catch (e) {}
+            }
+            if (!parsed) {
+                try { parsed = JSON.parse(decodeURIComponent(inputStr)); } catch (e) {}
+            }
+            if (parsed) {
+                return applyLoadedState(parsed);
+            }
+            return false;
+        }
+        // I/O Methods
+        document.getElementById('exportFileBtn').onclick = () => { let data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state)); let a = document.createElement('a'); a.href = data; a.download = 'banner.json'; a.click(); };
+        document.getElementById('importFileBtn').onclick = () => { let input = document.createElement('input'); input.type = 'file'; input.accept = '.json'; input.onchange = e => { let file = e.target.files[0]; let reader = new FileReader(); reader.readAsText(file, 'UTF-8'); reader.onload = readerEvent => { 
+            if(tryParseBannerData(readerEvent.target.result)) { showToast("File Loaded!"); } else { showErrorPopup("Invalid JSON file!"); } 
+        } }; input.click(); };
+        
+        document.getElementById('exportTextBtn').onclick = () => { let dataStr = JSON.stringify(state); document.getElementById('dataTextarea').value = dataStr; document.getElementById('dataTextarea').select(); document.execCommand('copy'); showToast(getTranslation('toast.copied')); };
+        document.getElementById('shareBannerBtn').onclick = () => { 
+            let hash = btoa(JSON.stringify(state)); 
+            let newUrl = new URL(window.location.href);
+            newUrl.searchParams.set('banner', hash);
+            newUrl.hash = '';
+            window.history.replaceState(null, null, newUrl.toString());
+            navigator.clipboard.writeText(newUrl.toString()).then(() => showToast(getTranslation('toast.copied'))); 
+        };
+        document.getElementById('geminiGemBtn').onclick = () => window.open('https://gemini.google.com/gem/190RHXPiQFjgC0XKEM_3j5xKtFHEmnz6i?usp=sharing', '_blank');
+        
+        document.getElementById('importTextBtn').onclick = () => { 
+            let inputStr = document.getElementById('dataTextarea').value.trim(); 
+            if(inputStr) { 
+                try {
+                    let url = new URL(inputStr);
+                    let bannerParam = url.searchParams.get('banner');
+                    if (bannerParam) inputStr = bannerParam;
+                    else if (url.hash) inputStr = url.hash.substring(1);
+                } catch(e) {}
+
+                let isGiveCmd = inputStr.startsWith("/give") || inputStr.startsWith("/minecraft:give");
+                if(isGiveCmd) {
+                    try {
+                        let shieldMode = inputStr.includes("minecraft:shield");
+                        let baseColorMatch = inputStr.match(/minecraft:([a-z_]+)_banner/);
+                        let baseColor = "white"; 
+                        if(shieldMode) {
+                            let baseShieldMatch = inputStr.match(/Base:(\d+)/);
+                            if(baseShieldMatch) {
+                                let cId = parseInt(baseShieldMatch[1]);
+                                baseColor = Object.keys(colorIds).find(k => colorIds[k] === cId) || "white";
+                            }
+                        } else if (baseColorMatch) {
+                            baseColor = baseColorMatch[1];
+                        }
+
+                        let newLayers = [{ pattern: "BASE", color: baseColor }];
+                        let patternsMatch = inputStr.match(/Patterns:\[(.*?)\]/);
+                        if(patternsMatch) {
+                            let pRegex = /{Color:(\d+),\s*Pattern:"([^"]+)"}/g;
+                            let match;
+                            while ((match = pRegex.exec(patternsMatch[1])) !== null) {
+                                let cId = parseInt(match[1]);
+                                let pCode = match[2];
+                                let colKey = Object.keys(colorIds).find(k => colorIds[k] === cId) || "black";
+                                let patKey = Object.keys(patternCodes).find(k => patternCodes[k] === pCode) || "CREEPER";
+                                newLayers.push({ pattern: patKey, color: colKey });
+                            }
+                        }
+                        state.layers = newLayers;
+                        state.shieldMode = shieldMode;
+                        if(state.layers.length > 6) state.unlimited = true;
+                        document.getElementById('unlimitedLayersToggle').checked = state.unlimited;
+                        document.getElementById('shieldModeToggle').checked = state.shieldMode;
+                        activeLayerIndex = 0;
+                        renderLayersList();
+                        renderBanner();
+                        showToast("Command Loaded!");
+                    } catch(err) {
+                        showErrorPopup("Invalid Command Format!");
+                    }
+                    return;
+                }
+
+                if (tryParseBannerData(inputStr)) {
+                    showToast("Loaded!");
+                } else {
+                    showErrorPopup("Invalid Data Format!"); 
+                }
+            } else { 
+                showErrorPopup("Paste JSON, Command or URL first!"); 
+            } 
+        };
+
+        window.addEventListener('load', () => {
+            document.getElementById('coloredPreviewsToggle').checked = savedColoredPreviews;
+            checkSite(window); loadCounter(); initFlags(); setLanguage('auto');
+            
+            if(supportedPlugins.length > 1) {
+                setInterval(() => {
+                    let container = $('#pluginCycleContainer');
+                    container.fadeOut(300, function() {
+                        currentPluginIdx = (currentPluginIdx + 1) % supportedPlugins.length;
+                        updatePluginConfig();
+                        container.fadeIn(300);
+                    });
+                }, 5000);
+            }
+
+            let bannerData = new URLSearchParams(window.location.search).get('banner');
+            if (!bannerData && window.location.hash) {
+                bannerData = window.location.hash.substring(1);
+            }
+            if(bannerData) { 
+                if(!tryParseBannerData(bannerData) && debugShare) {
+                    console.error("Error loading shared banner from URL parameter or hash. Input:", bannerData);
+                }
+            }
+            preloadAssets();
+            setTimeout(()=>{ loadChecking(); setInterval(()=>{ loadChecking(); },10000) }, 100);
+            setTimeout(()=>{let href = window.location.href;if(!href.includes(atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw=="))) {try{document.title = `Page stolen from https://${atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw==")}`;}catch(e){}window.location = `https://${atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw==")}/banner-generator/`}});
+        });
+    </script>
+    <script>
+      async function layer(){
+      const config={url:atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0Fsb25zb0FsaWFnYS9BbG9uc29BbGlhZ2FBUEkvcmVmcy9oZWFkcy9tYWluL2FwaS9hZHMvYWRzLmpzb24='),rotate:true,targetClasses:['.profile_input_label','.profile_auth','.profile_base','.minecraft_auth']};
+      const style=document.createElement('style');
+      style.innerHTML=`.aa-promo-box{background:#ffffff;border:1px solid #e0e0e0;box-shadow:0 1px 3px rgba(0,0,0,0.06);font-family:Arial,sans-serif;text-decoration:none;display:flex;flex-direction:column;box-sizing:border-box;padding:10px;border-radius:4px;transition:box-shadow 0.2s;overflow:hidden;width:100%;margin:0 auto;}.aa-promo-box:hover{box-shadow:0 4px 8px rgba(0,0,0,0.12);}.aa-promo-box[data-theme="dark"]{background:#2b2d31;border:1px solid #1e1f22;}.aa-promo-box[data-theme="dark"] .aa-promo-title{color:#5865F2;}.aa-promo-box[data-theme="dark"] .aa-promo-desc{color:#dbdee1;}.aa-promo-box[data-theme="dark"] .aa-sponsor-tag{color:#949ba4;}.aa-media-wrapper{text-align:center;margin-bottom:8px;display:flex;justify-content:center;align-items:center;min-height:0;}.aa-media-content{max-width:100%;max-height:100%;object-fit:contain;display:block;}.aa-text-wrapper{text-align:left;flex-shrink:1;}.aa-promo-horizontal{flex-direction:row!important;align-items:center;justify-content:space-between;padding:10px 15px;}.aa-promo-horizontal .aa-text-wrapper{order:1;margin-right:15px;display:flex;flex-direction:column;justify-content:center;}.aa-promo-horizontal .aa-media-wrapper{order:2;margin-bottom:0;height:100%;justify-content:flex-end;}.aa-sponsor-tag{font-size:10px;color:#70757a;margin-bottom:4px;display:block;}.aa-promo-title{color:#1a0dab;font-size:clamp(13px,3vw,14px);font-weight:normal;margin:0 0 4px 0;line-height:1.3;}.aa-promo-desc{color:#4d5156;font-size:clamp(12px,2.5vw,13px);margin:0;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}`;
+      document.head.appendChild(style);
+      try{const response=await fetch(config.url+'?t='+Date.now());let promos=await response.json();if(promos.length===0)return;if(!config.rotate)promos.sort((a,b)=>a.Priority-b.Priority);const targetElements=document.querySelectorAll(config.targetClasses.join(', '));let promoIndex=0;targetElements.forEach(container=>{let promo=config.rotate?promos[Math.floor(Math.random()*promos.length)]:promos[promoIndex%promos.length];if(!config.rotate)promoIndex++;const maxWidth=container.getAttribute('data-max-width'),maxHeight=container.getAttribute('data-max-height'),theme=container.getAttribute('data-theme'),layout=container.getAttribute('data-layout'),tSize=container.getAttribute('data-text-size')||"55",mSize=container.getAttribute('data-media-size')||"40";const promoLink=document.createElement('a');promoLink.href=promo.Link;promoLink.target='_blank';promoLink.className='aa-promo-box';if(theme)promoLink.setAttribute('data-theme',theme);if(maxWidth)promoLink.style.maxWidth=maxWidth;let isHorizontal=false;const hVal=maxHeight?parseInt(maxHeight.replace(/\D/g,'')):null,wVal=maxWidth?parseInt(maxWidth.replace(/\D/g,'')):null;if(layout==='horizontal')isHorizontal=true;else if(layout==='vertical')isHorizontal=false;else{if(hVal&&hVal<=160)isHorizontal=true;else if(!maxHeight&&!maxWidth){isHorizontal=true;promoLink.style.maxHeight='140px';}if(wVal&&wVal<250)isHorizontal=false;}if(isHorizontal)promoLink.classList.add('aa-promo-horizontal');const imgWrap=document.createElement('div');imgWrap.className='aa-media-wrapper';if(isHorizontal)imgWrap.style.width=mSize+'%';const img=document.createElement('img');img.src=promo.Image+(promo.Image.includes('?')?'&':'?')+'t='+Date.now();img.className='aa-media-content';if(!maxHeight&&!isHorizontal)img.style.maxHeight='150px';imgWrap.appendChild(img);const textWrap=document.createElement('div');textWrap.className='aa-text-wrapper';if(isHorizontal)textWrap.style.width=tSize+'%';const badge=document.createElement('span');badge.className='aa-sponsor-tag';badge.innerText='Patrocinado';const title=document.createElement('h3');title.className='aa-promo-title';title.innerText=promo.Title;const desc=document.createElement('p');desc.className='aa-promo-desc';desc.innerText=promo.Lines.join(' ');textWrap.appendChild(badge);textWrap.appendChild(title);textWrap.appendChild(desc);promoLink.appendChild(imgWrap);promoLink.appendChild(textWrap);if(maxHeight)promoLink.style.maxHeight=maxHeight;container.style.display='block';container.style.width='100%';container.innerHTML='';container.appendChild(promoLink);});}catch(e){console.error('Error:',e);}};
+    </script>
+    <script src="resources.js?v=547" onerror="myTimeout='inline-block';processAds()"></script>
+</body>
+</html>
